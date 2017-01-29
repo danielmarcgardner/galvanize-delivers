@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Galvanize Delivers</title>
+    <!--  Importing Materialize Locally-->
+    <link rel="stylesheet" href="css/materialize.css">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Overriding StyleSheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper #42a5f5 blue lighten-1">
+            <a href="index.html" class="brand-logo left"> Galvanize Delivers</a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="order.html">Order Delivery!</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col s6">
+                <h3 class="sectionHeader">Menu</h3>
+                <div class="col s12 m6">
+                    <div class="card cardHeight">
+                        <div class="card-image">
+                            <img src="img/burger.jpg">
+                            <span class="card-title">Royale With Cheese</span>
+                        </div>
+                        <div class="card-content">
+                            <a id="burgerOrder" class="btn-floating btn-small waves-effect waves-light red right"><i class="material-icons">add</i></a>
+                            <p class="price">$8.99</p><br>
+                            <p>Grade-A beef with cheddar cheese on a fresh bun baked in house. Comes with fries. </p><br>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col s12 m6">
+                    <div class="card cardHeight">
+                        <div class="card-image">
+                            <img src="img/pizza.jpg">
+                            <span class="card-title">Arugala Pie</span>
+                        </div>
+                        <div class="card-content">
+                            <a id="pizzaOrder" class="btn-floating btn-small waves-effect waves-light red right"><i class="material-icons">add</i></a>
+                            <p class="price">$11.99</p><br>
+                            <p>Handcrafted artisan pizza with locally sourced motzerrella cheese and fresh picked arugala.</p><br>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m6">
+                    <div class="card cardHeight">
+                        <div class="card-image">
+                            <img src="img/ribs.jpg">
+                            <span class="card-title">Smoked Swine</span>
+                        </div>
+                        <div class="card-content">
+                            <a id="ribsOrder" class="btn-floating btn-small waves-effect waves-light red right"><i class="material-icons">add</i></a>
+                            <p class="price">$14.99</p><br>
+                            <p>House specialty ribs with our secret in house blend of spices. Comes with onion rings and beans.</p><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m6">
+                    <div class="card cardHeight">
+                        <div class="card-image">
+                            <img src="img/ice_cream.jpg">
+                            <span class="card-title">Ice Cream Biscuit</span>
+                        </div>
+                        <div class="card-content">
+                            <a id="iceCreamOrder" class="btn-floating btn-small waves-effect waves-light red right"><i class="material-icons">add</i></a>
+                            <p class="price">$7.99</p><br>
+                            <p>Organic ice cream sandwich between two housemade biscuits. Flavors change daily.</p><br>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="col s6">
+                <h3 class="sectionHeader">Order</h3>
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th class="right">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderForm">
+
+                    </tbody>
+                </table>
+                <table>
+                    <tr>
+                        <td class="center"><b>Subtotal</b></td>
+                        <td class="right" id="subTotal">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td class="center"><b>Tax</b></td>
+                        <td class="right" id="taxTotal">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td class="center"><b>Total</b></td>
+                        <td class="right" id="grandTotal">$0.00</td>
+                    </tr>
+                </table><br>
+                <form>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix red-text">account_circle</i>
+                            <input placeholder="your name" id="name" type="text" class="validate" required>
+                            <label for="name">Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix red-text">phone</i>
+                            <input placeholder="your number" id="phone" type="tel" class="validate" required>
+                            <label for="name">Phone Number (including area code)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix red-text">home</i>
+                            <input placeholder="your address" id="address" type="text" class="validate" required>
+                            <label for="name">Address</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn waves-effect waves-light center red" id="order" type="submit" name="action">Order!
+                          <i class="material-icons right">payment</i>
+                        </button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="page-footer #42a5f5 blue lighten-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Galvanize Delivers</h5>
+                    <p class="grey-text text-lighten-4">Fine Dining Delivered On Demand</p>
+                    <p class="grey-text text-lighten-4">Contact us at 415-805-1888 or <a class="grey-text text-lighten-4" href="mailto:info@galvanize.com">info@galvanize.com</a></p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <ul id="nav-mobile" class="right">
+                        <li><a href="index.html" class="grey-text text-lighten-4 right">Home</a></li>
+                        <li><a href="order.html" class="grey-text text-lighten-4 right">Order Now</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 Copyright Galvanize Delivers Inc. A division of Galvanize Web Development Immersive
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

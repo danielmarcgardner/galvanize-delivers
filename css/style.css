@@ -1,0 +1,38 @@
+#heroHeader{
+  background: url("../img/hero.jpg");
+  height:500px;
+  margin-top: -40px;
+
+}
+
+#heroText{
+  color: white;
+  padding-top: 200px;
+  font-family: Apple Chancery;
+}
+
+.centered{
+  margin:0px 45% 0px 45%;
+}
+
+.sectionHeader{
+  font-size: 36px;
+  color: red;
+  text-align: center;
+}
+
+.price{
+  font-size: 20px;
+}
+
+.cardHeight{
+  height: 375px;
+}
+
+#order{
+  margin-left:40%;
+}
+
+.menuText{
+  height: 150px
+}
