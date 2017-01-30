@@ -13,7 +13,7 @@ function galvanizeDelivers() {
   const tel = document.getElementById('phone');
   const address = document.getElementById('address');
   const foodOrder = document.getElementsByClassName('orderedFood');
-  const resetCart = document.getElementById('reset')
+  const resetCart = document.getElementById('reset');
   const storage = localStorage.getItem('table');
 
 // declaring my changing variables
@@ -100,8 +100,7 @@ function itemCreator(item, description, cost) {
     grandTotal.innerHTML = `$${finalTot.toFixed(2)}`;
 // setting all of the conditions for localStorage
     foodRows += `<tr><td class='orderedFood'>${description}</td><td class='right'>$${cost}</td></tr>`;
-    localStorage.removeItem('table');
-    localStorage.setItem("table", foodRows);
+    localStorage.setItem('table', foodRows);
     localStorage.setItem('sum', sum.toFixed(2));
     localStorage.setItem('tax', tax.toFixed(2));
     localStorage.setItem('total', finalTot.toFixed(2));
@@ -115,42 +114,42 @@ function itemCreator(item, description, cost) {
   itemCreator(ribs, 'Smoked Swine', 14.99);
 
 // order button and validation
-orderButton.addEventListener('click', function() {
+  orderButton.addEventListener('click', function() {
 // Form validates to make sure it has at least 1 value. Adding in a validator to
 // put in atleast 2 letters into their name also making sure it is not numbers
-  event.preventDefault()
-  if (name.value.length < 2 || isNaN(name.value) === false) {
-    Materialize.toast('Please enter a valid name!', 4000);
+    event.preventDefault()
+    if (name.value.length < 2 || isNaN(name.value) === false) {
+      Materialize.toast('Please enter a valid name!', 4000);
   }
 // Checking for if its all numbers and the number is 7 characters long
-  else if (isNaN(telDashRemove(tel.value)) === true || telDashRemove(tel.value).length < 10) {
-    Materialize.toast('Please enter a valid Phone Number with area code!', 4000);
-  }
+    else if (isNaN(telDashRemove(tel.value)) === true || telDashRemove(tel.value).length < 10) {
+      Materialize.toast('Please enter a valid Phone Number with area code!', 4000);
+    }
 // Checking to make sure the first spot in the address value is a number and more than 5 characters
-  else if (isNaN(address.value[0]) === true || address.value.length < 5) {
-    Materialize.toast('Please enter a valid Address! Addresses must start with numbers', 4000);
-  }
+    else if (isNaN(address.value[0]) === true || address.value.length < 5) {
+      Materialize.toast('Please enter a valid Address! Addresses must start with numbers', 4000);
+    }
 // Validating theres an order.
-  else if (foodOrder.length === 0) {
-    Materialize.toast('Please order some food!!!', 4000);
-  }
+    else if (foodOrder.length === 0) {
+      Materialize.toast('Please order some food!!!', 4000);
+    }
 // If everything is successfully validated show success toast for 10 seconds and
 // clear localStorage upon reload
-  else {
-    Materialize.toast(`Thank you ${name.value} for your order from Galvanize Delivers!
-      Your food will be delivered to ${address.value}. If we have any issues we will call you at
-      ${tel.value}. Your order is ${foodPrinter()}. Your total today is $${finalTot.toFixed(2)}.
-      If you have any questions please call us at 415-805-1888`, 10000);
-    localStorage.clear();
+    else {
+      Materialize.toast(`Thank you ${name.value} for your order from Galvanize Delivers!
+        Your food will be delivered to ${address.value}. If we have any issues we will call you at
+        ${tel.value}. Your order is ${foodPrinter()}. Your total today is $${finalTot.toFixed(2)}.
+        If you have any questions please call us at 415-805-1888`, 10000);
+      localStorage.clear();
     // reloads page after 11 seconds
-    setTimeout(function(){location.reload()}, 11000)
-  }
+      setTimeout(function() { location.reload() }, 11000);
+    }
 
-});
+  });
 
-resetCart.addEventListener('click', function(){
-  localStorage.clear()
-})
+  resetCart.addEventListener('click', function() {
+    localStorage.clear();
+  });
 
 }
 
