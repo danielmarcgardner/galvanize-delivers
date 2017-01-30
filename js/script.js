@@ -98,6 +98,7 @@ function itemCreator(item, description, cost) {
     subTotal.innerHTML = `$${sum.toFixed(2)}`;
     taxTotal.innerHTML = `$${tax.toFixed(2)}`;
     grandTotal.innerHTML = `$${finalTot.toFixed(2)}`;
+
 // setting all of the conditions for localStorage
     foodRows += `<tr><td class='orderedFood'>${description}</td><td class='right'>$${cost}</td></tr>`;
     localStorage.setItem('table', foodRows);
@@ -151,6 +152,6 @@ function itemCreator(item, description, cost) {
     localStorage.clear();
   });
 
-}
+};
 
 galvanizeDelivers();
