@@ -13,6 +13,7 @@ function galvanizeDelivers() {
   const tel = document.getElementById('phone');
   const address = document.getElementById('address');
   const foodOrder = document.getElementsByClassName('orderedFood');
+  const resetCart = document.getElementById('reset')
   const storage = localStorage.getItem('table');
 
 // declaring my changing variables
@@ -133,17 +134,23 @@ orderButton.addEventListener('click', function() {
   else if (foodOrder.length === 0) {
     Materialize.toast('Please order some food!!!', 4000);
   }
-// If everything is successfully validated show success toast for 12 seconds and
+// If everything is successfully validated show success toast for 10 seconds and
 // clear localStorage upon reload
   else {
     Materialize.toast(`Thank you ${name.value} for your order from Galvanize Delivers!
       Your food will be delivered to ${address.value}. If we have any issues we will call you at
       ${tel.value}. Your order is ${foodPrinter()}. Your total today is $${finalTot.toFixed(2)}.
-      If you have any questions please call us at 415-805-1888`, 12000);
+      If you have any questions please call us at 415-805-1888`, 10000);
     localStorage.clear();
+    // reloads page after 11 seconds
+    setTimeout(function(){location.reload()}, 11000)
   }
 
 });
+
+resetCart.addEventListener('click', function(){
+  localStorage.clear()
+})
 
 }
 
